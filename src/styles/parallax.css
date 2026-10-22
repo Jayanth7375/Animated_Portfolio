@@ -1,0 +1,196 @@
+/* Parallax Component & Hero Styles - Original Dark Atmospheric Hero
+   Note: Hero parallax retains its original immersive appearance independently of the theme toggle. */
+
+.parallax {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #05070a !important;
+  color: #ffffff !important;
+}
+
+.parallax__header {
+  position: relative;
+  width: 100%;
+  height: 120vh;
+  min-height: 700px;
+  overflow: hidden;
+  background-color: #05070a !important;
+}
+
+.parallax__visuals {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  /* Promote to composite layer */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  background-color: #05070a !important;
+}
+
+.parallax__black-line-overflow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: transparent;
+  z-index: 10;
+}
+
+.parallax__layers {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.parallax__layer-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  /* Hardware acceleration and repaint prevention */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+/* Stacking Order for 3D Depth */
+[data-parallax-layer="1"] {
+  z-index: 1;
+}
+
+[data-parallax-layer="2"] {
+  z-index: 2;
+}
+
+[data-parallax-layer="3"],
+.parallax__layer-title {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  pointer-events: none;
+  /* Hardware acceleration */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+.parallax__title-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
+  gap: 0.25rem;
+}
+
+.parallax__title-name,
+.parallax .parallax__title-name {
+  font-family: var(--wf-font-sans, system-ui, sans-serif);
+  font-size: clamp(2rem, 6.5vw, 5rem);
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.85);
+  line-height: 1;
+  margin: 0;
+}
+
+.parallax__title,
+.parallax .parallax__title,
+.parallax h1.parallax__title {
+  font-family: var(--wf-font-sans, system-ui, sans-serif);
+  font-size: clamp(3.2rem, 11vw, 9.5rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff !important;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.85);
+  margin: 0;
+  line-height: 0.95;
+  text-align: center;
+}
+
+.parallax__title-subtitle,
+.parallax .parallax__title-subtitle,
+.parallax p.parallax__title-subtitle {
+  margin-top: 1rem;
+  font-family: var(--wf-font-mono, monospace);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: clamp(0.85rem, 1.8vw, 1.25rem);
+}
+
+[data-parallax-layer="4"] {
+  z-index: 4;
+}
+
+.parallax__fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 240px;
+  background: linear-gradient(to bottom, rgba(5, 7, 10, 0) 0%, rgba(5, 7, 10, 0.95) 85%, #05070a 100%) !important;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.parallax__content {
+  position: relative;
+  z-index: 6;
+  background-color: #05070a !important;
+  color: #ffffff !important;
+  padding: 3rem 1.5rem 5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.osmo-icon-svg {
+  width: 48px;
+  height: 48px;
+  color: #ffffff !important;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+.osmo-credits {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #9ca3af !important;
+  background-color: #05070a !important;
+}
+
+.osmo-credits__p-a {
+  color: #ffffff !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Reduced motion preference - disable animations */
+@media (prefers-reduced-motion: reduce) {
+  .parallax__visuals,
+  .parallax__layers,
+  .parallax__layer-img,
+  .parallax__layer-title {
+    will-change: auto !important;
+    transform: none !important;
+  }
+}

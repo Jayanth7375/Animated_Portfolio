@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "./parallax.css";
+@import "./kinetic-nav.css";
+
+:root {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  --font-sans: "Montserrat", sans-serif;
+  
+  /* Pearl Silver & Black Variables */
+  --color-primary: #e2e8f0;
+  --color-dark: #05070a;
+  --color-pearl: #f8fafc;
+  --color-silver: #cbd5e1;
+  --color-neutral-100: #f8fafc;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-800: #181b24;
+  --size-container: 1400px;
+  --container-padding: 2em;
+  --section-padding: 4em;
+  --gap: 1.5em;
+  --cubic-default: cubic-bezier(0.65, 0.05, 0, 1);
+}
